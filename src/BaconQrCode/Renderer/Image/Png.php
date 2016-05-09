@@ -108,6 +108,7 @@ class Png extends AbstractRenderer
      */
     public function getByteStream()
     {
+        imagetruecolortopalette($this->image, false, 256);
         ob_start();
         imagepng($this->image);
         return ob_get_clean();
